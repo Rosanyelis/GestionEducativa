@@ -119,10 +119,10 @@
                                         <a class="nav-link" href="{{ url('configuraciones/usuarios') }}">Usuarios</a>
                                         </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="">Semestres</a>
+                                        <a class="nav-link" href="{{ url('semestres') }}">Semestres</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="">Cursos</a>
+                                        <a class="nav-link" href="{{ url('cursos') }}">Cursos</a>
                                     </li>
                                 </ul>
                             </div>

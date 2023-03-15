@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\SemestreController;
 use Illuminate\Http\Request;
+use id;
 
 class SemestreController extends Controller
 {
@@ -13,7 +15,7 @@ class SemestreController extends Controller
      */
     public function index()
     {
-        //
+        return view('semestres.index');
     }
 
     /**

@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\AlumnoAtrasoController;
 use App\Http\Controllers\AlumnoController;
+use App\Http\Controllers\CursoController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SemestreController;
 use App\Http\Controllers\UsuariosController;
 use Illuminate\Support\Facades\Route;
 
@@ -49,6 +51,22 @@ Route::middleware('auth')->group(function () {
     Route::delete('/alumnos/{id}/eliminar-alumno', [AlumnoController::class, 'destroy'])->name('alumnos.destroy');
 
     Route::get('/alumnos/nuevo-atraso', [AlumnoAtrasoController::class, 'create'])->name('alumnoatraso.create');
+
+    Route::get('/cursos', [CursoController::class, 'index'])->name('cursos.index');
+    Route::get('/cursos/nuevo-curso', [CursoController::class, 'create'])->name('cursos.create');
+    Route::post('/cursos/guardar-curso', [CursoController::class, 'store'])->name('cursos.store');
+    Route::get('/cursos/{id}/ver-curso', [CursoController::class, 'show'])->name('cursos.show');
+    Route::get('/cursos/{id}/editar-curso', [CursoController::class, 'edit'])->name('cursos.edit');
+    Route::put('/cursos/{id}/actualizar-curso', [CursoController::class, 'update'])->name('cursos.update');
+    Route::delete('/cursos/{id}/eliminar-curso', [CursoController::class, 'destroy'])->name('cursos.destroy');
+    
+    Route::get('/semestres', [SemestreController::class, 'index'])->name('semestres.index');
+    Route::get('/semestres/nuevo-semestre', [SemestreController::class, 'create'])->name('semestres.create');
+    Route::post('/semestres/guardar-semestre', [SemestreController::class, 'store'])->name('semestres.store');
+    Route::get('/semestres/{id}/ver-semestre', [SemestreController::class, 'show'])->name('semestres.show');
+    Route::get('/semestres/{id}/editar-semestre', [SemestreController::class, 'edit'])->name('semestres.edit');
+    Route::put('/semestres/{id}/actualizar-semestre', [SemestreController::class, 'update'])->name('semestres.update');
+    Route::delete('/semestres/{id}/eliminar-semestre', [SemestreController::class, 'destroy'])->name('semestres.destroy');
 });
 
 require __DIR__.'/auth.php';
